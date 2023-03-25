@@ -26,6 +26,10 @@ app.use(cors()) //add CORS support to each following route handler
 const client = new Client(dbConfig);
 client.connect();
 
+app.get("/", async (req, res) => {
+  res.send("Study Resource Backend, use the app to interact with resources!")
+})
+
 
 //GET all data from selected static table
 app.get("/tablename/:name", async (req, res) => {
